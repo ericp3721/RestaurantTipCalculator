@@ -14,7 +14,8 @@ public class TipCalculator {
         scan.nextLine();
         System.out.print("Enter the item: ");
         String item = scan.nextLine();
-
+        double foodAmount = 0;
+        foodAmount++;
         //variables
         double total = 0;
         double totalTip = 0;
@@ -36,6 +37,7 @@ public class TipCalculator {
             cost = scan.nextDouble();
             scan.nextLine();
             if (cost != -1) {
+                foodAmount++;
                 System.out.print("Enter the item: ");
                 item = scan.nextLine();
             }
@@ -57,6 +59,7 @@ public class TipCalculator {
             System.out.println("Total cost per person: $" + afterPeople);
             System.out.println("--------------------------------------------");
             System.out.println("Items Ordered: \n" + itemNames);
+            System.out.println("This is the total amount of food you bought: " + foodAmount);
     }
 }
 
