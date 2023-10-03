@@ -14,7 +14,8 @@ public class TipCalculator {
         scan.nextLine();
         System.out.print("Enter the item: ");
         String item = scan.nextLine();
-
+        double foodAmount = 0;
+        foodAmount++;
         //variables
         double total = 0;
         double totalTip = 0;
@@ -23,7 +24,7 @@ public class TipCalculator {
         double tipPeople = 0;
         double afterPeople = 0;
         String itemNames = "";
-
+        //loop until user enters -1
         while (cost != -1) {
             total = total + cost;
             totalTip = (tipPercent * total) / 100;
@@ -36,6 +37,7 @@ public class TipCalculator {
             cost = scan.nextDouble();
             scan.nextLine();
             if (cost != -1) {
+                foodAmount++;
                 System.out.print("Enter the item: ");
                 item = scan.nextLine();
             }
@@ -47,16 +49,17 @@ public class TipCalculator {
             tipPeople = Math.round(tipPeople * 100.0) / 100.0;
             afterPeople = Math.round(afterPeople * 100.0) / 100.0;
         }
-            System.out.println("--------------------------------------------");
-            System.out.println("Total bill before tip: $" + total);
-            System.out.println("Total percentage: " + tipPercent + "%");
-            System.out.println("Total tip: $" + (totalTip));
-            System.out.println("Total bill with tip: $" + totalTipBill);
-            System.out.println("Per person cost before tip: $" + beforePeople);
-            System.out.println("Tip per person: $" + tipPeople);
-            System.out.println("Total cost per person: $" + afterPeople);
-            System.out.println("--------------------------------------------");
-            System.out.println("Items Ordered: \n" + itemNames);
+        //prints results at the end
+        System.out.println("--------------------------------------------");
+        System.out.println("Total bill before tip: $" + total);
+        System.out.println("Total percentage: " + tipPercent + "%");
+        System.out.println("Total tip: $" + (totalTip));
+        System.out.println("Total bill with tip: $" + totalTipBill);
+        System.out.println("Per person cost before tip: $" + beforePeople);
+        System.out.println("Tip per person: $" + tipPeople);
+        System.out.println("Total cost per person: $" + afterPeople);
+        System.out.println("--------------------------------------------");
+        System.out.println("Items Ordered: \n" + itemNames);
+        System.out.println("This is the total amount of food you bought: " + foodAmount);
     }
 }
-
